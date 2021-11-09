@@ -2,8 +2,8 @@ package com.geruman.tank;
 
 public class TankAimCommand extends AbstractTankCommand{
 
-	Aim aim;
-	public TankAimCommand(Tank tank,Aim aim) {
+	Aims aim;
+	public TankAimCommand(Tank tank,Aims aim) {
 		super(tank);
 		this.aim = aim;
 	}

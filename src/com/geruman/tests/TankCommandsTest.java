@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.geruman.tank.Aim;
-import com.geruman.tank.Move;
+import com.geruman.tank.Aims;
+import com.geruman.tank.Moves;
 import com.geruman.tank.MoveTankCommand;
 import com.geruman.tank.Tank;
 import com.geruman.tank.TankAimCommand;
@@ -19,17 +19,17 @@ class TankCommandsTest {
 	void testMoveCommand() {
 		System.out.println("Move command");
 		Tank tank = new Tank();
-		MoveTankCommand command = new MoveTankCommand(tank,Move.NORTH);
+		MoveTankCommand command = new MoveTankCommand(tank,Moves.NORTH);
 		command.execute();
-		assertEquals(tank.getPosition(),Move.NORTH);
+		assertEquals(tank.getPosition(),Moves.NORTH);
 	}
 	@Test
 	void testAimCommand() {
 		System.out.println("Aiming");
 		Tank tank = new Tank();
-		TankAimCommand command = new TankAimCommand(tank,Aim.FORWARD);
+		TankAimCommand command = new TankAimCommand(tank,Aims.FORWARD);
 		command.execute();
-		assertEquals(tank.getAim(),Aim.FORWARD);
+		assertEquals(tank.getAim(),Aims.FORWARD);
 	}
 	@Test 
 	void testShootCommand() {
@@ -46,12 +46,12 @@ class TankCommandsTest {
 		TankCommander tankCommander = new TankCommander();
 		tankCommander.addOrder(new TankShootCommand(tank));
 		tankCommander.addOrder(new TankShootCommand(tank));
-		tankCommander.addOrder(new MoveTankCommand(tank,Move.NORTH));
-		tankCommander.addOrder(new TankAimCommand(tank,Aim.LEFT));
-		tankCommander.addOrder(new MoveTankCommand(tank,Move.SOUTH));
+		tankCommander.addOrder(new MoveTankCommand(tank,Moves.NORTH));
+		tankCommander.addOrder(new TankAimCommand(tank,Aims.LEFT));
+		tankCommander.addOrder(new MoveTankCommand(tank,Moves.SOUTH));
 		tankCommander.executeOrders();
-		assertEquals(tank.getPosition(),Move.SOUTH);
-		assertEquals(tank.getAim(),Aim.LEFT);
+		assertEquals(tank.getPosition(),Moves.SOUTH);
+		assertEquals(tank.getAim(),Aims.LEFT);
 		assertEquals(tank.getShotsFired(),2);
 	}
 	

@@ -2,14 +2,14 @@ package com.geruman.tank;
 
 public class Tank {
 
-	private Aim aim;
+	private Aims aim;
 	private int shots = 0;
-	private Move position;
-	public Move getPosition() {
+	private Moves position;
+	public Moves getPosition() {
 		return position;
 	}
 
-	public Aim getAim() {
+	public Aims getAim() {
 		return aim;
 	}
 
@@ -17,9 +17,9 @@ public class Tank {
 		return shots;
 	}
 
-	public void setAim(Aim aim) {
-		System.out.println("Aiming "+aim);
-		this.aim = aim;
+	public void setAim(Aims where) {
+		System.out.println("Aiming "+where);
+		this.aim = where;
 		
 	}
 
@@ -29,9 +29,9 @@ public class Tank {
 		
 	}
 
-	public void move(Move move) {
-		System.out.println("Moving "+move);
-		this.position = move;
+	public void move(Moves where) {
+		System.out.println("Moving "+where);
+		this.position = where;
 		
 	}
 

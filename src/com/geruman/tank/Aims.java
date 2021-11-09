@@ -1,5 +1,5 @@
 package com.geruman.tank;
 
-public enum Aim {
+public enum Aims {
 	FORWARD, LEFT
 }

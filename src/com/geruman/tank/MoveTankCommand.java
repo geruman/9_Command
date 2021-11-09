@@ -2,8 +2,8 @@ package com.geruman.tank;
 
 public class MoveTankCommand extends AbstractTankCommand{
 
-	private Move move;
-	public MoveTankCommand(Tank tank, Move move) {
+	private Moves move;
+	public MoveTankCommand(Tank tank, Moves move) {
 		super(tank);
 		this.move = move;
 	}

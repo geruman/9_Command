@@ -1,7 +1,7 @@
 package com.geruman;
 
-import com.geruman.tank.Aim;
-import com.geruman.tank.Move;
+import com.geruman.tank.Aims;
+import com.geruman.tank.Moves;
 import com.geruman.tank.MoveTankCommand;
 import com.geruman.tank.Tank;
 import com.geruman.tank.TankAimCommand;
@@ -14,14 +14,14 @@ public class CommandDemoMain {
 		Tank tank = new Tank();
 		TankCommander commander = new TankCommander();
 		commander.addOrder(new TankShootCommand(tank));
-		commander.addOrder(new TankAimCommand(tank, Aim.LEFT));
+		commander.addOrder(new TankAimCommand(tank, Aims.LEFT));
 		commander.addOrder(new TankShootCommand(tank));
-		commander.addOrder(new MoveTankCommand(tank, Move.NORTH));
+		commander.addOrder(new MoveTankCommand(tank, Moves.NORTH));
 		commander.addOrder(new TankShootCommand(tank));
-		commander.addOrder(new MoveTankCommand(tank, Move.NORTH));
-		commander.addOrder(new TankAimCommand(tank, Aim.FORWARD));
+		commander.addOrder(new MoveTankCommand(tank, Moves.NORTH));
+		commander.addOrder(new TankAimCommand(tank, Aims.FORWARD));
 		commander.addOrder(new TankShootCommand(tank));
-		commander.addOrder(new MoveTankCommand(tank, Move.SOUTH));
+		commander.addOrder(new MoveTankCommand(tank, Moves.SOUTH));
 		commander.executeOrders();
 	}
 }

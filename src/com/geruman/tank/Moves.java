@@ -1,5 +1,5 @@
 package com.geruman.tank;
 
-public enum Move {
+public enum Moves {
 	NORTH, SOUTH
 }
